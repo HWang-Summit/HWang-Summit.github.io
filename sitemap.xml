@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://haowang-summit.com/friends/index.html</loc>
+    
+    <lastmod>2019-11-26T05:42:59.029Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://haowang-summit.com/about/index.html</loc>
     
     <lastmod>2019-11-26T05:15:43.124Z</lastmod>
@@ -16,21 +23,14 @@
   </url>
   
   <url>
-    <loc>https://haowang-summit.com/friends/index.html</loc>
-    
-    <lastmod>2019-11-25T09:13:29.506Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://haowang-summit.com/categories/index.html</loc>
+    <loc>https://haowang-summit.com/contact/index.html</loc>
     
     <lastmod>2019-11-25T09:13:29.505Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://haowang-summit.com/contact/index.html</loc>
+    <loc>https://haowang-summit.com/categories/index.html</loc>
     
     <lastmod>2019-11-25T09:13:29.505Z</lastmod>
     
