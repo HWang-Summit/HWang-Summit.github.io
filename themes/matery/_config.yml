@@ -164,9 +164,9 @@ text:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatars/summit.jpg
+  avatar: /medias/avatars/summit.png
   career: 天津大学 | 计算机应用技术 | HPC && Deep Learning
-  introduction: 我是天津大学计算机应用技术专业2018级博士研究生。研究方向是深度学习与高性能计算。欢迎大家交流！
+  introduction: 我是天津大学计算机应用技术专业2018级博士研究生。研究方向是深度学习与高性能计算，欢迎大家交流！
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
