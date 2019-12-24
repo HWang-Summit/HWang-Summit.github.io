@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://haowang-summit.com/"/>
-  <updated>2019-12-17T14:05:26.310Z</updated>
+  <updated>2019-12-24T12:03:57.684Z</updated>
   <id>https://haowang-summit.com/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VS Code e shortcuts</title>
+    <link href="https://haowang-summit.com/2019/12/24/vs-code-shortcuts/"/>
+    <id>https://haowang-summit.com/2019/12/24/vs-code-shortcuts/</id>
+    <published>2019-12-24T12:00:23.000Z</published>
+    <updated>2019-12-24T12:03:57.684Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="VSCODE" scheme="https://haowang-summit.com/categories/VSCODE/"/>
+    
+    
+      <category term="VSCODE" scheme="https://haowang-summit.com/tags/VSCODE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hi,Wei jing!</title>
     <link href="https://haowang-summit.com/2019/11/26/hi-wei-jing/"/>
     <id>https://haowang-summit.com/2019/11/26/hi-wei-jing/</id>
     <published>2019-11-26T12:45:54.000Z</published>
-    <updated>2019-12-17T14:05:26.310Z</updated>
+    <updated>2019-12-17T14:37:20.172Z</updated>
     
     <summary type="html">
     
