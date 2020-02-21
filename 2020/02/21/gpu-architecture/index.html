@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hyper-Threading Technology, HighPerformanceComputing DeepLearning 王昊 haowang-summit WangHao 高性能计算 深度学习">
+    <meta name="keywords" content="GPU Architecture, HighPerformanceComputing DeepLearning 王昊 haowang-summit WangHao 高性能计算 深度学习">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="Overview
-超线程技术是Intel引入的一种同步多线程技术，在体系结构上，具有超线程技术的处理器每个核由两个逻辑处理器组成，每个逻辑处理器都有自己的体系结构状态。每个逻辑处理器可以单独停止、中断或执行指定的线程，独立于共享同一物理核心">
+    <meta name="description" content="了解GPU的硬件架构，才能更好的发挥GPU的最佳性能，本文从sp，sm，thread，block，grid，warp对NVIDIA GPU的硬件架构进行探讨，以加深对NVIDIA GPU硬件架构的了解。首先我们要明确：SP(streamin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hyper-Threading Technology | 王昊的博客</title>
+    <title>GPU Architecture | 王昊的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -291,13 +290,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hyper-Threading Technology
+                        GPU Architecture
                     </div>
                 </div>
             </div>
@@ -408,8 +407,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/超线程技术/" target="_blank">
-                            <span class="chip bg-color">超线程技术</span>
+                        <a href="/tags/GPU架构/" target="_blank">
+                            <span class="chip bg-color">GPU架构</span>
                         </a>
                         
                     </div>
@@ -446,7 +445,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    459
+                    318
                 </div>
                 
 
@@ -469,16 +468,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<p>超线程技术是Intel引入的一种同步多线程技术，在体系结构上，具有超线程技术的处理器每个核由两个逻辑处理器组成，每个逻辑处理器都有自己的体系结构状态。每个逻辑处理器可以单独停止、中断或执行指定的线程，独立于共享同一物理核心的其他逻辑处理器（officially called Hyper-Threading Technology or HT Technology and abbreviated as HTT or HT）。</p>
-<p>Intel的超线程技术，目的是为了充分地利用一个单核CPU地资源。CPU在执行一条机器指令时，并不会完全地利用所有CPU的资源，而且实际上，是有大量资源被闲置的。超线程技术允许两个线程同时不冲突地使用CPU中的资源。比如一条整数运算指令会只用到整数运算单元，此时浮点数运算单元就空闲了，若使用超线程技术，且另一个线程刚好此时要执行一个浮点运算指令，CPU就允许属于两个不同线程的整数运算指令和浮点数运算指令同时执行，达到真正的并行。但这两个线程当前也并不意味着两个线程在同一个CPU中一直可以并行执行，只是恰好碰到两个线程当前要执行的指令不使用相同的CPU资源才可以真正的并行执行。</p>
-<h1 id="CPU个数，核心数，线程数"><a href="#CPU个数，核心数，线程数" class="headerlink" title="CPU个数，核心数，线程数"></a>CPU个数，核心数，线程数</h1><ul>
-<li>Windows通过命令查看核心数和线程数：<br>在cmd命令中输入“wmic”，回车；然后再输入“cpu get ”。<br>NumberOfCores：表示CPU核心数<br>NumberOfLogicalProcessors：表示CPU线程数 </li>
+                <p>了解GPU的硬件架构，才能更好的发挥GPU的最佳性能，本文从sp，sm，thread，block，grid，warp对NVIDIA GPU的硬件架构进行探讨，以加深对NVIDIA GPU硬件架构的了解。首先我们要明确：SP(streaming Process), SM(streaming multiprocessor)是硬件概念。而thread， block, grid, warp是软件上(CUDA)的概念。</p>
+<h1 id="从硬件看"><a href="#从硬件看" class="headerlink" title="从硬件看"></a>从硬件看</h1><ul>
+<li>SP: 最基本的处理单元，streaming processor, 即 CUDA core。最后具体指令是在SP上处理的。GPU进行并行计算，也就是多个SP同时处理。</li>
+<li>SM：多个SP加上其他的一些资源组成一个streaming multiprocessor，即GPU大核。其他资源如：warp scheduler, register, shared memory等。SM可以看做GPU的心脏（对比CPU核心），register和shared memory是SM的稀缺资源。CUDA将这些资源分配给所有驻留在SM中的threads。因此，这些有限的资源就使每个SM中active warps有非常严格的限制，也就限制了并行能力。</li>
 </ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
-<li>en.wikipedia.org/wiki/Hyper-threading</li>
-<li><a href="https://www.zhihu.com/question/20277695" target="_blank" rel="noopener">https://www.zhihu.com/question/20277695</a></li>
-<li><a href="https://blog.csdn.net/hong10086/article/details/81633669" target="_blank" rel="noopener">https://blog.csdn.net/hong10086/article/details/81633669</a></li>
+<p>每个SM包含的SP数量依据GPU架构而不同，相同架构的GPU包含的SM数量则根据GPU的中高低端来定。</p>
+<h1 id="从软件看"><a href="#从软件看" class="headerlink" title="从软件看"></a>从软件看</h1><h1 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h1><h1 id="GPU运算速度和SP核心数量的关系"><a href="#GPU运算速度和SP核心数量的关系" class="headerlink" title="GPU运算速度和SP核心数量的关系"></a>GPU运算速度和SP核心数量的关系</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://www.jianshu.com/p/87cf95b1faa0" target="_blank" rel="noopener">https://www.jianshu.com/p/87cf95b1faa0</a></li>
+<li><a href="https://blog.csdn.net/junparadox/article/details/50540602" target="_blank" rel="noopener">https://blog.csdn.net/junparadox/article/details/50540602</a></li>
+<li><a href="https://www.zhihu.com/question/46400432" target="_blank" rel="noopener">https://www.zhihu.com/question/46400432</a></li>
 </ol>
 
             </div>
@@ -638,9 +637,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hyper-Threading Technology》
+                    《GPU Architecture》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/21/hyper-threading-technology/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/21/gpu-architecture/" property="cc:attributionName"
                rel="cc:attributionURL">
                 王昊
             </a> 采用
@@ -681,7 +680,7 @@
         repo: 'HWang-Summit.github.io',
         owner: 'HWang-Summit',
         admin: "HWang-Summit",
-        id: '2020/02/21/hyper-threading-technology/',
+        id: '2020/02/21/gpu-architecture/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -964,9 +963,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/02/21/gpu-architecture/">
                     <div class="card-image">
@@ -984,9 +984,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -999,6 +999,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1014,7 +1015,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/02/21/hyper-threading-technology/">
@@ -1049,7 +1050,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

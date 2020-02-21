@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://haowang-summit.com/"/>
-  <updated>2020-02-21T14:22:30.654Z</updated>
+  <updated>2020-02-21T15:58:06.578Z</updated>
   <id>https://haowang-summit.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GPU Architecture</title>
+    <link href="https://haowang-summit.com/2020/02/21/gpu-architecture/"/>
+    <id>https://haowang-summit.com/2020/02/21/gpu-architecture/</id>
+    <published>2020-02-21T14:44:01.000Z</published>
+    <updated>2020-02-21T15:58:06.578Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;了解GPU的硬件架构，才能更好的发挥GPU的最佳性能，本文从sp，sm，thread，block，grid，warp对NVIDIA GPU的硬件架构进行探讨，以加深对NVIDIA GPU硬件架构的了解。首先我们要明确：SP(streaming Process),
+        
+      
+    
+    </summary>
+    
+      <category term="处理器技术" scheme="https://haowang-summit.com/categories/%E5%A4%84%E7%90%86%E5%99%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="GPU架构" scheme="https://haowang-summit.com/tags/GPU%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>Hyper-Threading Technology</title>

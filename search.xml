@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>GPU Architecture</title>
+      <link href="/2020/02/21/gpu-architecture/"/>
+      <url>/2020/02/21/gpu-architecture/</url>
+      
+        <content type="html"><![CDATA[<p>了解GPU的硬件架构，才能更好的发挥GPU的最佳性能，本文从sp，sm，thread，block，grid，warp对NVIDIA GPU的硬件架构进行探讨，以加深对NVIDIA GPU硬件架构的了解。首先我们要明确：SP(streaming Process), SM(streaming multiprocessor)是硬件概念。而thread， block, grid, warp是软件上(CUDA)的概念。</p><h1 id="从硬件看"><a href="#从硬件看" class="headerlink" title="从硬件看"></a>从硬件看</h1><ul><li>SP: 最基本的处理单元，streaming processor, 即 CUDA core。最后具体指令是在SP上处理的。GPU进行并行计算，也就是多个SP同时处理。</li><li>SM：多个SP加上其他的一些资源组成一个streaming multiprocessor，即GPU大核。其他资源如：warp scheduler, register, shared memory等。SM可以看做GPU的心脏（对比CPU核心），register和shared memory是SM的稀缺资源。CUDA将这些资源分配给所有驻留在SM中的threads。因此，这些有限的资源就使每个SM中active warps有非常严格的限制，也就限制了并行能力。</li></ul><p>每个SM包含的SP数量依据GPU架构而不同，相同架构的GPU包含的SM数量则根据GPU的中高低端来定。</p><h1 id="从软件看"><a href="#从软件看" class="headerlink" title="从软件看"></a>从软件看</h1><h1 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h1><h1 id="GPU运算速度和SP核心数量的关系"><a href="#GPU运算速度和SP核心数量的关系" class="headerlink" title="GPU运算速度和SP核心数量的关系"></a>GPU运算速度和SP核心数量的关系</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li><a href="https://www.jianshu.com/p/87cf95b1faa0" target="_blank" rel="noopener">https://www.jianshu.com/p/87cf95b1faa0</a></li><li><a href="https://blog.csdn.net/junparadox/article/details/50540602" target="_blank" rel="noopener">https://blog.csdn.net/junparadox/article/details/50540602</a></li><li><a href="https://www.zhihu.com/question/46400432" target="_blank" rel="noopener">https://www.zhihu.com/question/46400432</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 处理器技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GPU架构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hyper-Threading Technology</title>
       <link href="/2020/02/21/hyper-threading-technology/"/>
       <url>/2020/02/21/hyper-threading-technology/</url>
