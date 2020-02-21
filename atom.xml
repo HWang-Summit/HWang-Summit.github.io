@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://haowang-summit.com/"/>
-  <updated>2019-12-24T13:02:17.664Z</updated>
+  <updated>2020-02-21T13:22:55.241Z</updated>
   <id>https://haowang-summit.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>VS Code e shortcuts</title>
-    <link href="https://haowang-summit.com/2019/12/24/vs-code-shortcuts/"/>
-    <id>https://haowang-summit.com/2019/12/24/vs-code-shortcuts/</id>
-    <published>2019-12-24T12:00:23.000Z</published>
-    <updated>2019-12-24T13:02:17.664Z</updated>
+    <title>CPU超线程技术</title>
+    <link href="https://haowang-summit.com/2018/02/21/hyper-threading/"/>
+    <id>https://haowang-summit.com/2018/02/21/hyper-threading/</id>
+    <published>2018-02-21T13:21:35.000Z</published>
+    <updated>2020-02-21T13:22:55.241Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,16 @@
       
         
         
-          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt; VsCode是一款很强大的编程软件，本文主要总结一下涉及到的快捷键。&lt;/p&gt;
-&lt;h2 id=&quot;快捷键的五种组合方式：&quot;&gt;&lt;a
+          &lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="VSCODE" scheme="https://haowang-summit.com/categories/VSCODE/"/>
+      <category term="处理器技术" scheme="https://haowang-summit.com/categories/%E5%A4%84%E7%90%86%E5%99%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="VSCODE" scheme="https://haowang-summit.com/tags/VSCODE/"/>
+      <category term="超线程技术" scheme="https://haowang-summit.com/tags/%E8%B6%85%E7%BA%BF%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
