@@ -290,7 +290,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,12 +476,12 @@
 </ul>
 <p>下图给出一个SM的示意图，图中每个绿色框表示一个SP（等同于CPU的ALU），下图仅表示一个SM，一个GPU可以有多个SM，最终一个GPU就可能含有上千个SP。这么多核心“同时运行”。速度可想而知，这个引号只是想表明实际上，<strong>软件逻辑上所有SP是并行的，但是物理上并不是所有SP都能同时执行计算，因为有些会处于挂起状态，就绪等待其他状态，这有关GPU的线程调度。</strong><br><img src="SM.png" height="50%" width="50%"></p>
 <h1 id="从软件看"><a href="#从软件看" class="headerlink" title="从软件看"></a>从软件看</h1><hr>
-<p>thread，block, grid, warp是CUDA编程上的概念，以方便程序员软件设计，组织线程，如下图所示：<br><img src="thread.png" height="50%" width="50%"></p>
+<p>thread, block, grid, warp 是CUDA编程上的概念，以方便程序员软件设计，组织线程，如下图所示：<br><img src="thread.png" height="50%" width="50%"></p>
 <ul>
-<li>thread:一个CUDA的并行程序会被许多个threads来执行。</li>
+<li>thread: 一个CUDA的并行程序会被许多个threads来执行。</li>
 <li>block: 数个threads会被群组成一个block，同一个block中的threads可以同步，也可以通过shared memory通信。</li>
-<li>grid:多个nlocks则会再构成grid。</li>
-<li>warp:GPU执行程序时的调度单位，目前cuda的warp大小为32，同在一个warp的线程，<em>以不同数据资源执行相同的指令</em>，这就是所谓SIMT。</li>
+<li>grid: 多个nlocks则会再构成grid。</li>
+<li>warp: GPU执行程序时的调度单位，目前cuda的warp大小为32，同在一个warp的线程，<em>以不同数据资源执行相同的指令</em>，这就是所谓SIMT。</li>
 </ul>
 <h1 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h1><hr>
 <p>从软件上看，SM更像是一个独立的CPU core， SP则类似于CPU中的ALU，SM是GPU架构中非常重要的部分，GPU硬件的并行性就是又SM决定的。</p>
@@ -999,7 +999,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="GPU Architecture">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="GPU Architecture">
                         
                         <span class="card-title">GPU Architecture</span>
                     </div>
@@ -1049,7 +1049,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Hyper-Threading Technology">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hyper-Threading Technology">
                         
                         <span class="card-title">Hyper-Threading Technology</span>
                     </div>
