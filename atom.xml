@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>王昊的博客</title>
+  
+  <subtitle>WangHao</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://haowang-summit.com/"/>
+  <updated>2020-02-27T07:09:31.935Z</updated>
+  <id>https://haowang-summit.com/</id>
+  
+  <author>
+    <name>王昊</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GPU Architecture</title>
+    <link href="https://haowang-summit.com/2020/02/21/gpu-architecture/"/>
+    <id>https://haowang-summit.com/2020/02/21/gpu-architecture/</id>
+    <published>2020-02-21T14:44:01.000Z</published>
+    <updated>2020-02-27T07:09:31.935Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;了解GPU的硬件架构，才能更好的发挥GPU的最佳性能，本文从sp，sm，thread，block，grid，warp对NVIDIA GPU的硬件架构进行探讨，以加深对NVIDIA GPU硬件架构的了解。首先我们要明确：SP（streaming Process）,
+        
+      
+    
+    </summary>
+    
+      <category term="处理器技术" scheme="https://haowang-summit.com/categories/%E5%A4%84%E7%90%86%E5%99%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="GPU架构" scheme="https://haowang-summit.com/tags/GPU%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hyper-Threading Technology</title>
+    <link href="https://haowang-summit.com/2020/02/21/hyper-threading-technology/"/>
+    <id>https://haowang-summit.com/2020/02/21/hyper-threading-technology/</id>
+    <published>2020-02-21T13:35:04.000Z</published>
+    <updated>2020-02-22T12:33:23.899Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="处理器技术" scheme="https://haowang-summit.com/categories/%E5%A4%84%E7%90%86%E5%99%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="超线程技术" scheme="https://haowang-summit.com/tags/%E8%B6%85%E7%BA%BF%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+</feed>
