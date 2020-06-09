@@ -469,7 +469,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>了解GPU的硬件架构，才能更好的发挥GPU的最佳性能，本文从sp，sm，thread，block，grid，warp对NVIDIA GPU的硬件架构进行探讨，以加深对NVIDIA GPU硬件架构的了解。首先我们要明确：SP（streaming Process）, SM（streaming multiprocessor）是硬件概念。而thread，block, grid, warp是软件上（CUDA）的概念。</p>
-<h1 id="从硬件看试一下"><a href="#从硬件看试一下" class="headerlink" title="从硬件看试一下"></a>从硬件看试一下</h1><hr>
+<h1 id="从硬件看"><a href="#从硬件看" class="headerlink" title="从硬件看"></a>从硬件看</h1><hr>
 <ul>
 <li>SP: 最基本的处理单元，streaming processor, 即 CUDA core。最后具体指令是在SP上处理的。GPU进行并行计算，也就是多个SP同时处理。</li>
 <li>SM：多个SP加上其他的一些资源组成一个streaming multiprocessor，即GPU大核。其他资源如：warp scheduler, register, shared memory等。SM可以看做GPU的心脏（对比CPU核心），register和shared memory是SM的稀缺资源。CUDA将这些资源分配给所有驻留在SM中的threads。因此，这些有限的资源就使每个SM中active warps有非常严格的限制，也就限制了并行能力。每个SM包含的SP数量依据GPU架构而不同，相同架构的GPU包含的SM数量则根据GPU的中高低端来定。</li>
