@@ -1,0 +1,28 @@
+[
+	{
+		"name": "这一生关于你的风景",
+		"artist": "枯木逢春",
+		"url": "/medias/music/zheyishengguanyunidefengjing.mp3",
+		"cover": "/medias/music/avatars/zheyishengguanyunidefengjing.png"
+	},{
+		"name": "Rollin On",
+		"artist": "The Chairs",
+		"url": "/medias/music/RollinOn.mp3",
+		"cover": "/medias/music/avatars/RollinOn.png"
+	},{
+		"name": "多想在平庸的生活拥抱你",
+		"artist": "隔壁老樊",
+		"url": "/medias/music/yongbaoni.mp3",
+		"cover": "/medias/music/avatars/yongbaoni.png"
+	},{
+		"name": "你曾是少年",
+		"artist": "焦迈奇",
+		"url": "/medias/music/nicengshishaonian.mp3",
+		"cover": "/medias/music/avatars/nicengshishaonian.png"
+	},{
+		"name": "See You Again",
+		"artist": "Charlie Puth",
+		"url": "/medias/music/SeeYouAgain.mp3",
+		"cover": "/medias/music/avatars/SeeYouAgain.png"
+	}
+]
